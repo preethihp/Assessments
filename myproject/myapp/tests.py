@@ -33,7 +33,7 @@ class UserDetailsTestCase(APITestCase):
 
     def test_update_user(self):
         url = f'/users/{self.user1.pk}/'
-        data = {'name': 'user1_updated', 'email': 'user1_updated@example.com', 'age': 21}
+        data = {'name': 'user1_updated', 'email': 'user1_updated@example.com','age': 21}
         response = self.client.put(url, data)
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         self.assertEqual(response.data['name'], 'user1_updated')
